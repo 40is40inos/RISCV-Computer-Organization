@@ -1,0 +1,97 @@
+.data
+
+# Letters between a-z	Character	Hex Value	Binary Value
+str_a:	.asciz "a"	#a		61		01100001									
+str_b:	.asciz "b"	#b		62		01100010
+str_c:	.asciz "c"	#c		63		01100011
+str_d:	.asciz "d" 	#d		64		01100100
+str_e:	.asciz "e"	#e		65		01100101
+str_f:	.asciz "f"	#f		66		01100110
+str_g:	.asciz "g"	#g		67		01100111
+str_h:	.asciz "h"	#h		68		01101000
+str_i:	.asciz "i"	#i		69		01101001
+str_j:	.asciz "j"	#j		6a		01101010
+str_k:	.asciz "k"	#k		6b		01101011
+str_l:	.asciz "l"	#l		6c		01101100
+str_m:	.asciz "m"	#m		6d		01101101 
+str_n:	.asciz "n"	#n		6e		01101110
+str_o:	.asciz "o"	#o		6f		01101111
+str_p:	.asciz "p"	#p		70		01110000
+str_q:	.asciz "q"	#q		71		01110001
+str_r:	.asciz "r"	#r		72		01110010
+str_s:	.asciz "s"	#s		73		01110011
+str_t:	.asciz "t"	#t		74		01110100
+str_u:	.asciz "u"	#u		75		01110101
+str_v:	.asciz "v"	#v		76		01110110
+str_w:	.asciz "w"	#w		77		01110111
+str_x:	.asciz "x"	#x		78		01111000
+str_y:	.asciz "y"	#y		79		01111001
+str_z:	.asciz "z"	#z		7a		01111010
+	
+# Letters Between A-Z	Character	Hex Value	Binary Value
+str_A:	.asciz "A"	#A		41		01000001
+str_B:	.asciz "B"	#B		42		01000010
+str_C:	.asciz "C"	#C		43		01000011
+str_D:	.asciz "D"	#D		44		01000100
+str_E:	.asciz "E"	#E		45		01000101
+str_F:	.asciz "F"	#F		46		01000110
+str_G:	.asciz "G"	#G		47		01000111
+str_H:	.asciz "H"	#H		48		01001000
+str_I:	.asciz "I"	#I		49		01001001
+str_J:	.asciz "J"	#J		4a		01001010
+str_K:	.asciz "K"	#K		4b		01001011
+str_L:	.asciz "L"	#L		4c		01001100
+str_M:	.asciz "M"	#M		4d		01001101
+str_N:	.asciz "N"	#N		4e		01001110
+str_O:	.asciz "O"	#O		4f		01001111
+str_P:	.asciz "P"	#P		50		01010000
+str_Q:	.asciz "Q"	#Q		51		01010001
+str_R:	.asciz "R"	#R		52		01010010
+str_S:	.asciz "S"	#S		53		01010011
+str_T:	.asciz "T"	#T		54		01010100
+str_U:	.asciz "U"	#U		55		01010101
+str_V:	.asciz "V"	#V		56		01010110
+str_W:	.asciz "W"	#W		57		01010111
+str_X:	.asciz "X"	#X		58		01011000
+str_Y:	.asciz "Y"	#Y		59		01011001
+str_Z:	.asciz "Z"	#Z		5a		01011010
+
+# Numbers between 0-9
+str_0:	.asciz "0"	#0			30		00110000
+str_1:	.asciz "1"	#1			31		00110001
+str_2:	.asciz "2"	#2			32		00110010
+str_3:	.asciz "3"	#3			33		00110011
+str_4:	.asciz "4"	#4			34		00110100
+str_5:	.asciz "5"	#5			35		00110101
+str_6:	.asciz "6"	#6			36		00110110
+str_7:	.asciz "7"	#7			37		00110111
+str_8:	.asciz "8"	#8			38		00111000
+str_9:	.asciz "9"	#9			39		00111001
+
+# a) The values of the characters are in order increasing by 1
+
+
+str_xyz:.asciz "xyz"
+
+# b)The integer value of "xyz" is 7a7978 in hexadecimal and 8026488 in decimal.
+# The binary number is 11110100111100101111000
+
+# A little Endian Machine would store this char as
+# 	00000000	01111010	01111001	01111000
+#	  \0		   z 		  y		  x
+#	byte i+3	byte i+2      	 byte i+1      	 byte i
+#
+# A Big Endian Machine Would store this char as
+#	01111000	01111001	01111010	00000000
+#	  x		    y		   z		   \0
+#	byte i		byte i+1 	byte i+2	byte i+3
+
+# The little Endian when translated to integer decimal is 8026488 HEX : 0x007a7978
+# The Big Endian when translated to integer decimal is 2021227008 HEX : 78797A00
+
+
+.text
+	la 	x5 str_xyz
+	lw  	x10, (x5) 
+	addi 	x17, x0, 1  
+	ecall 
