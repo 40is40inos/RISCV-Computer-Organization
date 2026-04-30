@@ -8,13 +8,13 @@ This repository contains the complete laboratory exercises and assignments for t
 
 The portfolio focuses on low-level computer architecture, RISC-V assembly programming, and processor design principles.
 
-## 🎓 Course Overview
+## Course Overview
 - **Institution**: University of Crete, Computer Science Department (CSD)
 - **Course**: HY-225 Computer Organization
 - **Processor Architecture**: RISC-V (32-bit)
 - **Simulators Used**: RARS (Assembler and Runtime Simulator), Ripes
 
-## 🛠️ Key Topics Covered
+## Key Topics Covered
 - **RISC-V Assembly**: Logic operations, control flow, loops, and recursive function calls using standard calling conventions.
 - **Memory Management**: Analysis of Endianness, memory alignment, and byte-addressability.
 - **Data Structures**: Implementation of dynamic structures like Linked Lists in assembly.
@@ -23,7 +23,7 @@ The portfolio focuses on low-level computer architecture, RISC-V assembly progra
 - **Memory Hierarchy**: Cache organization (Direct-mapped vs. Set-Associative), hit/miss ratio analysis, and replacement policies.
 - **System Architecture**: Virtual memory, page tables, TLBs, and exception handling.
 
-## 📂 Repository Structure
+## Repository Structure
 Each folder corresponds to a weekly exercise and includes its own `README.md` with specific implementation details.
 
 ---
